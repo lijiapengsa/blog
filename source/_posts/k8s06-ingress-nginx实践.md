@@ -5,7 +5,7 @@ tags: k8s
 categories: 操作实践
 ---
 
-###写在前面的总结：
+### 写在前面的总结：
 
 * ingress 可以和 controllers 不在一个namespace
 
@@ -33,7 +33,7 @@ ingress-nginx-controllers  是k8s集群的入口、负责集群内部所有`serv
 
 * nginx反向代理：嗯就是个反向代理
 
-###ingress-nginx原理思维导图：
+### ingress-nginx原理思维导图：
 
 ```mermaid
 graph LR
@@ -78,7 +78,7 @@ end
 
 
 
-###从配置角度ingress和controllers的关系：
+### 从配置角度ingress和controllers的关系：
 
 在定义Ingress 资源时，可以通过下面的配置制定controllers：
 
@@ -214,7 +214,7 @@ metadata:
 >
 > 更多的rewrite参数和信息请参考[连接](https://kubernetes.github.io/ingress-nginx/examples/rewrite/README/)
 
-###一个完整的单域名Ingress资源描述
+### 一个完整的单域名Ingress资源描述
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -239,7 +239,7 @@ spec:
       secretName: example-tls
 ```
 
-###升级和回滚ingress-nginx-controllers
+### 升级和回滚ingress-nginx-controllers
 
 ```bash
 # 升级
@@ -259,7 +259,7 @@ REVISION	UPDATED                 	STATUS    	CHART               	DESCRIPTION
 3       	Tue Jul 31 18:19:01 2018	DEPLOYED  	nginx-ingress-0.23.0	Rollback to 1
 ```
 
-###删除和清理
+### 删除和清理
 
 ```bash
 helm delete --purge my-nginx
