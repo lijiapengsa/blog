@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://lijapengsa.github.iom
+url: http://lijapeng.cf
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -77,10 +77,10 @@ theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: git@github.com:lijiapengsa/lijiapengsa.github.io.git
-  branch: master
+#deploy:
+#  type: git
+#  repo: git@github.com:lijiapengsa/lijiapengsa.github.io.git
+#  branch: master
 search:
   path: search.xml
   field: post
