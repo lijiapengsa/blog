@@ -1,11 +1,11 @@
 ---
-title: ingress-nginx实践
+title: k8s06-ingress-nginx实践
 date: 2018-08-08 16:46:01
 tags: k8s
 categories: 操作实践
 ---
 
-####写在前面的总结：
+###写在前面的总结：
 
 * ingress 可以和 controllers 不在一个namespace
 
@@ -33,7 +33,7 @@ ingress-nginx-controllers  是k8s集群的入口、负责集群内部所有`serv
 
 * nginx反向代理：嗯就是个反向代理
 
-####ingress-nginx原理思维导图：
+###ingress-nginx原理思维导图：
 
 ```mermaid
 graph LR
@@ -53,7 +53,7 @@ nginx(nginx反向代理) -.-> |6.用户请求经过ingress controllers| Pod(Pod.
 end
 ```
 
-#### 系统架构角度
+### 系统架构角度
 
 ```mermaid
 graph LR
@@ -78,7 +78,7 @@ end
 
 
 
-####从配置角度ingress和controllers的关系：
+###从配置角度ingress和controllers的关系：
 
 在定义Ingress 资源时，可以通过下面的配置制定controllers：
 
@@ -107,7 +107,7 @@ args:
 
 ##ingress-nginx 运维
 
-#### 部署
+### 部署
 
 ```shell
 helm fetch stable/nginx-ingress
@@ -129,7 +129,7 @@ kubectl exec -it $POD_NAME -- /nginx-ingress-controller --version
 
 > 查看部署结果
 
-#### 增加TLS/HTTPS支持
+### 增加TLS/HTTPS支持
 
 可以使用以下命令生成自签名证书和私钥：
 
@@ -171,7 +171,7 @@ kubectl create secret tls example-tls --key tls/key.pem --cert tls/cert.pem
    ...
 ```
 
-#### 访问出现503错误
+### 访问出现503错误
 
 将域名解析到ingress的externalIPs后（通过DNS服务、/etc/hosts文件都可以），访问出现`503 Service Temporarily Unavailable `错误代码
 
@@ -195,7 +195,7 @@ kubectl  logs -f my-nginx-nginx-ingress-xxxxx
 >
 > 在ingress描述文件中设置 `nginx.ingress.kubernetes.io/secure-backends` 功能为true [参考](https://github.com/kubernetes/ingress-nginx/blob/5e4137c6e7f4a6cea91be7fc179ff680c647d5fd/docs/user-guide/nginx-configuration/annotations.md)（使用）
 
-#### 后端服务需要302跳转
+### 后端服务需要302跳转
 
 在后端service工作在在非`/`路径下，比如直接访问服务`http://x.com`的时候会自动302跳转到`http://x.com/welcome`。也就是说后端service真正工作在`/welcome`路径下，直接访问时会自动帮你302跳转。但是ingress-nginx 默认是不会302的，所以需要在ingress 资源文件添加额外的`annotations`注释:
 
@@ -214,7 +214,7 @@ metadata:
 >
 > 更多的rewrite参数和信息请参考[连接](https://kubernetes.github.io/ingress-nginx/examples/rewrite/README/)
 
-####一个完整的单域名Ingress资源描述
+###一个完整的单域名Ingress资源描述
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -239,7 +239,7 @@ spec:
       secretName: example-tls
 ```
 
-####升级和回滚ingress-nginx-controllers
+###升级和回滚ingress-nginx-controllers
 
 ```bash
 # 升级
@@ -259,13 +259,13 @@ REVISION	UPDATED                 	STATUS    	CHART               	DESCRIPTION
 3       	Tue Jul 31 18:19:01 2018	DEPLOYED  	nginx-ingress-0.23.0	Rollback to 1
 ```
 
-####删除和清理
+###删除和清理
 
 ```bash
 helm delete --purge my-nginx
 ```
 
-#### 指定ingress-nginx-controllers部署位置
+### 指定ingress-nginx-controllers部署位置
 
 在使用`hostNetwork`的情况下，每次重新调度后、Pod所在的节点也许就会变化，DNS解析和`/etc/hosts`配置就会失效，为解决这样的问题可以将ingress-nginx-controllers部署到指定节点，这样每次重新调度就会
 
@@ -286,4 +286,4 @@ nodeSelector:                   # 指定Ingress Controller调度到某个节点
 
 官方文档：https://kubernetes.github.io/ingress-nginx
 
-# github仓库：https://github.com/kubernetes/ingress-nginx/tree/master/docs
+github仓库：https://github.com/kubernetes/ingress-nginx/tree/master/docs
