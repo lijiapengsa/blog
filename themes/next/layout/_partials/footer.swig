@@ -59,3 +59,10 @@
     }
   </script>
 {% endif %}
+
+<div style="width:300px;margin:0 auto; padding:20px 0;">
+    <a target="_blank" href="https://www.upyun.com/" style="display:inline-block;">
+      <img src="/images/upyun_logo7.png" style="float:left;height:28px;"/>
+      <p style="float:left;margin: 0px 0px 0px 5px; color:#939393;">又拍云提供存储</p>
+    </a>
+</div>
