@@ -105,7 +105,7 @@ args:
 
 在实际的环境中，我们的Service会位于不同的namespace中，需要注意的是ingress必须被定义在Service所在的namespace中，否则会找不到后端Service。
 
-##ingress-nginx 运维
+## ingress-nginx 运维
 
 ### 部署
 
