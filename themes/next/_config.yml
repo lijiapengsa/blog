@@ -405,12 +405,12 @@ gitment:
   enable: ture
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true # Show comments count in post meta area
-  lazy: false # Comments lazy loading with a button
+  lazy: true # Comments lazy loading with a button
   cleanly: false # Hide 'Powered by ...' on footer, and more
   # language: zh-Hans # Force language, or auto switch by theme
   language:  # Force language, or auto switch by theme
   github_user: lijiapengsa  # MUST HAVE, Your Github ID
-  github_repo: lijiapengsa.github.io  # MUST HAVE, The repo you use to store Gitment comments
+  github_repo: blog  # MUST HAVE, The repo you use to store Gitment comments
   client_id: e28f00763e0cab6e328e # MUST HAVE, Github client id for the Gitment
   client_secret: ccac277f01866d6b0c9f829bfd050d5fa6f389dd # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
