@@ -24,7 +24,8 @@
       function renderGitment(){
         var gitment = new {{CommentsClass}}({
             <!-- id: window.location.pathname, -->
-            id: '{{ page.title }}',
+            <!-- id: '{{ page.title }}', -->
+            id: decodeURI(window.location.pathname),
             owner: '{{ theme.gitment.github_user }}',
             repo: '{{ theme.gitment.github_repo }}',
             {% if theme.gitment.mint %}
