@@ -155,7 +155,7 @@ links_layout: block
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
 #avatar: /images/avatar.gif
-avatar: /images/head-bg.jpg
+avatar: http://github-images.test.upcdn.net/github.io/head-bg.jpg
 
 # Table Of Contents in the Sidebar
 toc:
@@ -244,7 +244,7 @@ post_wordcount:
 
 # Reward
 reward_comment: 有任何问题的话在页面末尾提交评论，我会尽快回复！
-wechatpay: /images/wechatpay.jpg
+wechatpay: http://github-images.test.upcdn.net/github.io/wechatpay.jpg
 #alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
