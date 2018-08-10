@@ -2,7 +2,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
-<link href="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js" rel="stylesheet" type="text/css" />
 
 
 {% if theme.pace %}
@@ -156,6 +156,6 @@
   <link rel="canonical" href="{{ config.url }}/{{ page.canonical_path.replace('index.html', '') }}"/>
 {% endif %}
 
-<script type="text/javascript" src="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.min.js">
+<script type="text/javascript" src="https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js">
 
 {% include 'head/custom-head.swig' %}
