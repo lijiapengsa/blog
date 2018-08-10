@@ -744,8 +744,7 @@ vendors:
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
   # 图片延迟加载、优化网站打开速度
-  lazyload: https://cdn.bootcss.com/lazyload/2.0.3/lazyload-min.js
-
+  lazyload: 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
   velocity: https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js
