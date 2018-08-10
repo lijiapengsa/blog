@@ -36,7 +36,7 @@ categories: 理论知识
 
 ​	Ingress是一个规则集合（在k8s中属于一种资源），定义了域名和集群内的Service的对应关系。相当与nginx配置域名文件和其中的不同localtion ？
 
-​	![](https://raw.githubusercontent.com/unibet/ext_nginx/master/Ingress.png)
+![ingress](http://github-images.test.upcdn.net/github.io/Ingress.png)
 
 在新版本中 Nginx 与 Ingress Controller合并为一个组件（从部署角度来看只需要部署 Ingress Controller）
 
