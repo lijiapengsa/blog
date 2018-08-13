@@ -420,7 +420,7 @@ valine:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-baidushare: true
+baidushare: false
 #  type: button
 
 # Share
@@ -455,7 +455,7 @@ needmoreshare2:
       position: bottomCenter
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
   float:
-    enable: truee
+    enable: true
     options:
       iconStyle: box
       boxForm: horizontal
