@@ -6,9 +6,9 @@ categories: 理论知识
 ---
 #### 一：回顾
 
-​	在理论基础篇简单的对"外部系统访问Service的问题"做了一点点研究，这次来仔细看看Kubernetes内部服务是如何接收并处理来自外部的用户请求的。
+	在理论基础篇简单的对"外部系统访问Service的问题"做了一点点研究，这次来仔细看看Kubernetes内部服务是如何接收并处理来自外部的用户请求的。
 
-​	简单来说，上篇最后介绍的服务暴露三种方式：
+	简单来说，上篇最后介绍的服务暴露三种方式：
 
  1. NodePort，就是在每个计算节点/虚拟机上开放端口，访问这个节点的这个端口就会被转发到服务。应用转发层可以手动转发用户请求到这些服务。显然这个方式太low了，不够自动化，智能化。（在节点很多的情况下怎么知道服务被部署到那个计算节点上了...）
 
@@ -28,13 +28,13 @@ categories: 理论知识
 
 #### 二：分析
 
-​	目前看来也只有Ingress有点符合咱们目前的架构需求（可控，自动化，等等），看看Ingress是如何工作的。Ingress有三个组件：
+	目前看来也只有Ingress有点符合咱们目前的架构需求（可控，自动化，等等），看看Ingress是如何工作的。Ingress有三个组件：
 
-​	Ingress Controller、Ingress、反向代理负载均衡器（nginx?）
+	Ingress Controller、Ingress、反向代理负载均衡器（nginx?）
 
-​	他们三个的关系是，Ingress Controller 与Kubernetes API交互，可感知集群内的Service、Pod变化。Ingress Controller在结合Ingress生成配置，更新反向代理负载均衡器，刷新配置实现动态发现和更新。
+	他们三个的关系是，Ingress Controller 与Kubernetes API交互，可感知集群内的Service、Pod变化。Ingress Controller在结合Ingress生成配置，更新反向代理负载均衡器，刷新配置实现动态发现和更新。
 
-​	Ingress是一个规则集合（在k8s中属于一种资源），定义了域名和集群内的Service的对应关系。相当与nginx配置域名文件和其中的不同localtion ？
+	Ingress是一个规则集合（在k8s中属于一种资源），定义了域名和集群内的Service的对应关系。相当与nginx配置域名文件和其中的不同localtion ？
 
 ![ingress](http://github-images.test.upcdn.net/github.io/Ingress.png)
 
