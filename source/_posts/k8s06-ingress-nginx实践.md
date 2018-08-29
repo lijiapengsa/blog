@@ -57,8 +57,8 @@ end
 
 ```mermaid
 graph LR
-client --> |01| DNS服务
-DNS服务 -.-> |02| client
+client --> |01| DNS服务or本地hosts
+DNS服务or本地hosts -.-> |02| client
 client --> |03| SLB(k8s集群外部负载均衡)
 SLB --> ingress-nginx-contorllers01
 SLB --> ingress-nginx-contorllers02
