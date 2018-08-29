@@ -9,7 +9,7 @@ categories: 操作实践
 
 ### 为什么要使用prometheus
 
-在前面<a href="../metrics-server/README.md">metrics-service</a>已经可以根据计算节点、Pod的使用率进行HPA。但是是没有办法做到自定义指标的，这个自定义指标不是CPU、内存、磁盘的自定义。而是基于kubernetes集群的应用程序的指标的自定义，要收集应用程序级别的指标，就需要prometheus来配合。
+在前面<a href="../k8s07-metrics-server实践">metrics-service</a>已经可以根据计算节点、Pod的使用率进行HPA。但是是没有办法做到自定义指标的，这个自定义指标不是CPU、内存、磁盘的自定义。而是基于kubernetes集群的应用程序的指标的自定义，要收集应用程序级别的指标，就需要prometheus来配合。
 
 相较于metrics-server、prometheus是一个更完整的监控管道（Full Metrics Pipelines）。
 
