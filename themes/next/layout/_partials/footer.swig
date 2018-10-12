@@ -52,7 +52,7 @@
 </div>
 
 {% if (theme.mermaid.enable)  %}
-  <script src='https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0-rc.8/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});
